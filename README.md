@@ -552,5 +552,78 @@ int main()
 	}
 }
 ```
-
-  
+  ## 基礎題：計算商數
+  ```c
+  #include <stdio.h>
+int main()
+{
+	int a,b;
+	scanf("%d%d",&a,&b);
+	printf("%d\n",a/b);
+}
+```
+  ## 基礎題：三數極大
+  ```c
+  #include <stdio.h>
+int main()
+{
+	int a,b,c;
+	scanf("%d%d%d",&a,&b,&c);
+	if(a>b&&a>c)printf("%d",a);
+	else if(a<b&&b>c)printf("%d",b);
+	else if(a<c&&b<c)printf("%d",c);
+	printf("\n");
+}
+```
+  ## 基礎題：N數之和
+  ```c
+  #include <stdio.h>
+int main()
+{
+	int n,ans=0,a[100];
+	scanf("%d",&n);
+	for(int i=0;i<n;i++){
+		scanf("%d",&a[i]);
+		ans+=a[i];
+	}
+	printf("%d\n",ans);
+}
+```
+  ## 進階題：絕對值函數
+  ```c
+  #include <stdio.h>
+int f(int a)
+{
+	if(a>0)return a;
+	else return a*(-1);
+}
+int main(void)
+{
+	int n;
+	scanf("%d",&n);
+	printf("[%d]",f(n));
+	return 0;
+}
+```
+  ## 進階題：反序數字
+  ```c
+  #include <stdio.h>
+int f(int n)
+{
+	int p;
+	int m=0;
+	
+	while (n>0){
+		p=n%10;
+		n=n/10;
+		m=p+m*10;
+	}
+	return m;
+}
+int main()
+{
+	int n,m;
+	scanf("%d",&n);
+	printf("%d+%d=%d\n",n,f(m),n+f(m));
+}
+```
