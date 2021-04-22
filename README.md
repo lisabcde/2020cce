@@ -758,3 +758,60 @@ int main()
    printf("%d=50*%d+10*%d+5*%d+1*%d",n,n/50,(n%50)/10,((n%50)%10)/5,(((n%50)%10)%5)/1);
 }
 ```
+## 科星廣場
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+char name[2000][75];
+int compare(const void *p1, const void*p2){
+	return strcmp((char*)p1,(char*)p2);
+}
+
+char other[2000];
+
+int main()
+{
+	int n;
+	scanf("%d",&n);
+	for(int i=0;i<n;i++){
+		scanf("%s",name[i]);
+		gets(other);
+	}
+	
+	qsort(name,n,75,compare);
+	
+	int ans=1;
+	for(int i=0;i<n;i++){
+		if(strcmp(name[i],name[i+1])==0) ans++;
+		else{
+			printf("%s %d\n",name[i],ans);
+			ans=1;
+		}
+	}
+}
+```
+## 字串排序
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+char line[100][10];
+int compare(const void *p1 ,const void *p2){
+	return strcmp((char*)p1,(char*)p2);
+}
+int main()
+{
+	int n;
+	scanf("%d",&n);
+	for(int i=0;i<n;i++){
+		scanf("%s",line[i]);
+	}
+	
+	qsort(line,n,10,compare);
+	
+	for(int i=0;i<n;i++){
+		printf("%s\n",line[i]);
+	}
+}
+```
