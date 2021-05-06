@@ -815,3 +815,176 @@ int main()
 	}
 }
 ```
+## List of Conquests
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int compare(const void*p1,const void*p2)
+{
+	return strcmp((char*)p1,(char*)p2);
+}
+char line[2000][80];
+char other[80];
+int main()
+{
+	int n;
+	scanf("%d",&n);
+	
+	for(int i=0;i<n;i++){
+		scanf("%s",line[i]);
+		gets(other);
+	}
+	
+	qsort(line,n,80,compare);
+	
+	int ans=1;
+	printf("%s ",line[0]);
+	for(int i=0;i<n-1;i++){
+		if(strcmp(line[i],line[i+1])!=0){
+		printf("%d\n",ans);
+		printf("%s ",line[i+1]);
+		ans=1;
+	}else ans++;
+	}
+	printf("%d\n",ans);
+}
+```
+## 進階題：最大公因數gcd
+```c
+#include <stdio.h>
+int main()
+{
+	int a,b,ans=1,min;
+	printf("Enter two integers: \n");
+	scanf("%d%d",&a,&b);
+	if(a>b)min=b;
+	else min=a;
+	for(int i=2;i<=min;i++){
+		if(a%i==0 && b%i==0)ans=i;
+	}
+	printf("The greatest common divisor of %d and %d is %d\n",a,b,ans);
+}
+```
+## 進階題：字串長度
+```c
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+	char a[100],b[100];
+	scanf("%s%s",&a,&b);
+	int lena=strlen(a),lenb=strlen(b);//字串長度a b
+	if( lena > lenb )printf("1");//a>b
+	else if( lena < lenb )printf("-1");//a<b
+	else //2字串相等
+	{
+		printf("%d",strcmp(a,b));
+	}
+	
+}
+```
+## 進階題：函數判斷質數
+```c
+#include <iostream>
+using namespace std;
+int prime(int n)
+{
+	int i;
+	for(i=2;i<n;i++){
+		if(n%i==0)break;
+	}
+	if(i==n)return 1;
+	else return 0;
+}
+int main(){
+  int n;cin>>n;
+  cout<<"["<<prime(n)<<"]";
+  return 0;
+}
+/* 上方 C++ 的 main 函數 等價於 下方 C 的 main 函數
+int main(void){
+    int n;
+    scanf("%d", &n);
+    printf("[%d]", prime(n));
+    return 0;
+}
+*/
+```
+## 進階題：判斷迴文
+```c
+#include <stdio.h>
+#include <string.h>
+char a[80];
+int main()
+{
+	int i;
+	scanf("%s",&a);
+	
+	int len=strlen(a);
+	
+	for(i=0;i<len/2;i++){
+		if(a[i]!=a[len-1-i])break;
+	}
+	
+	if(i==len/2)printf("YES");
+	else printf("NO");
+}
+```
+## 基礎題：計算餘數及列印
+```c
+#include <stdio.h>
+int main()
+{
+	int a,b;
+	printf("Enter two numbers: ");
+	scanf("%d%d",&a,&b);
+	
+	printf("The remainder is %d\n",a%b);
+}
+```
+## 基礎題：判別正方形
+```c
+#include <stdio.h>
+int main()
+{
+	int a,b;
+	scanf("%d%d",&a,&b);
+	printf("Enter two numbers:  ");
+	if(a==b&&b==a)printf("It is a square ");
+	else printf("It is not a square ");
+}
+```
+## 基礎題：將一連串整數相乘
+```c
+#include <stdio.h>
+int main()
+{
+	int a,b,ans=1;
+	printf("Enter the number of values to be processed: ");
+	scanf("%d",&a);
+	
+	for(int i=0;i<a;i++){
+		printf("Enter a value: ");
+		scanf("%d",&b);
+		ans*=b;
+	}
+	printf("Product of the %d values is %d",a,ans);
+}
+```
+## 基礎題：平年月份的天數
+```c
+#include <stdio.h>
+int main()
+{
+	int n;
+	scanf("%d",&n);
+	
+	if(n==1||n==3||n==5||n==7||n==8||n==10||n==12)printf("31");
+	else if(n==2)printf("28");
+	else printf("30");
+}
+```
+
+
+
