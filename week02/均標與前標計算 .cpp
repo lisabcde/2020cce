@@ -12,7 +12,7 @@ int main()
 		sum+=a[i];
 	}
 	avg=(float)sum/n;
-	printf("§¡¼Ð:%.1f\n",avg);
+	printf("前標:%.1f\n",avg);
 	int sumtop=0;
 	float avgtop;
 	int x=0;
@@ -25,5 +25,5 @@ int main()
 		}
 	}
 	avgtop=(float)sumtop/x;
-	printf("«e¼Ð:%.1f\n",avgtop);
+	printf("前標:%.1f\n",avgtop);
 }
