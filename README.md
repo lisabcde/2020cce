@@ -1105,6 +1105,119 @@ int main()
 	printf("%d",a*a-b*b);
 }
 ```
-
-
+## 進階題：數字個數
+```c
+#include <stdio.h>
+int main()
+{
+	int a,ans=0;
+	while (scanf("%d",&a)!=EOF)//End Of File
+	{
+		ans++;
+	}
+	printf("%d",ans-1);
+}
+```
+## 基礎題：剩餘啤酒有幾手又幾瓶
+```c
+#include <stdio.h>
+int main()
+{
+	int p,d;
+	scanf("%d%d",&p,&d);
+	printf("%d %d",(p-6*d)/6,(p-6*d)%6);
+}
+```
+## 基礎題：三數最小
+```c
+#include <stdio.h>
+int m(int a,int b,int c)
+{
+	int ans=a;
+	if(ans>b)ans=b;
+	if(ans>c)ans=c;
+	return ans;
+}
+int main()
+{
+	int x,y,z;
+	scanf("%d%d%d",&x,&y,&z);
+	printf("%d\n",m(x,y,z));
+}
+```
+## 基礎題：計算立方值
+```c
+#include <stdio.h>
+int main()
+{
+	int a,i;
+	for(i=0;i<6;i++){
+		scanf("%d",&a);
+		printf("%d\n",a*a*a);
+	}
+}
+```
+## 進階題：判斷平方數
+```c
+#include <stdio.h>
+int main()
+{
+	int n,ans=0;
+	scanf("%d",&n);
+	for(int i=0;i<n;i++){
+		if(i*i==n)ans=i;
+	}
+	printf("%d",ans);
+}
+```
+## 進階題：計算質數個數
+```c
+#include <stdio.h>
+int main()
+{
+	int a,b,count=0,j;
+	scanf("%d%d",&a,&b);
+	for(int i=a ;i<=b ;i++ ){
+		for( j=2 ;j < i ;j++ ){
+			if(i%j==0)break;
+		}
+		if(j==i)count++;
+	}
+	printf("%d",count);
+}
+```
+## 進階題：三數組合
+```c
+#include <stdio.h>
+int main()
+{
+	int n[3],a=0,t;
+	for(int i=0;i<3;i++){
+		scanf("%d",&n[i]);
+	}
+	for(int i=0;i<3;i++){
+		for(int k=0;k<3;k++){
+			if(n[i]<n[k]){
+				t=n[i];
+				n[i]=n[k];
+				n[k]=t;
+			}
+		}
+	}
+	for(int i=2;i>=0;i--){
+		a=a*10+n[i];
+	}
+	printf("%d",a+1);
+}
+```
+## 基礎題：找千位數
+```c
+#include <stdio.h>
+int main()
+{
+	int n;
+	scanf("%d",&n);
+	printf("%d",n/1000%10);
+}
+```
 
