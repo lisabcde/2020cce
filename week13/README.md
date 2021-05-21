@@ -14,7 +14,7 @@ void mousePressed(){//按下去時,會呼叫這個函式
 a++;
 }
 ```
-## 正課 倒數計時
+## 正課 時間
 ```c
 void setup(){
   size(1024,400);
