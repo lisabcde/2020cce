@@ -95,3 +95,71 @@ void mousePressed(){
   N++;//其實數字早就決定了!!!我們只是慢慢印出來,讓人以為你是慢慢抽
 }
 ```
+## 進階題：奇數反流
+```c
+#include <stdio.h>
+int main()
+{
+	int n,i,a[100];
+	scanf("%d",&n);
+	for(i=0;i<n;i++){
+		scanf("%d",&a[i]);
+	}
+	for(i=n-1;i>=0;i--){
+		if(a[i]%2==1)printf("%d ",a[i]);
+	}
+}
+```
+## 基礎題：大位王
+```c
+#include <stdio.h>
+int main()
+{
+	int c;
+	scanf("%d",&c);
+	if(c<0)c=-c;
+	while((c/10)>0){
+		c/=10;
+	}
+	printf("%d\n",c);
+}
+```
+## 基礎題：輸入西元y年，判斷該y年是否為閏年	
+```c
+#include <stdio.h>
+int main()
+{
+	int n;
+	scanf("%d",&n);
+	if(n%4==0 && n%100!=0){
+		printf("%d is a leap year.\n",n);
+	}
+	else printf("%d is not a leap year.\n",n);
+}
+```
+## 基礎題：把數字倒著印出來
+```c
+#include <stdio.h>
+int main()
+{
+	int a[10],i;
+	for(i=0;i<10;i++){
+		scanf("%d",&a[i]);
+	}
+	for(i=9;i>=0;i--){
+		printf("%d ",a[i]);
+	}
+}
+```
+## 基礎題：區間測速
+```c
+#include <stdio.h>
+int main()
+{
+	int a,i;
+	scanf("%d",&a);
+	
+	int s=60*60*1.2/a;
+	printf("%d",s);
+}
+```
