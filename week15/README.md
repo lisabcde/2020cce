@@ -53,3 +53,22 @@ void mousePressed(){
   player.play();
 }
 ```
+## 正課 倒數完播音樂
+```c
+import processing.sound.*;
+
+//從第2步的程式開始增加!!!
+import processing.sound.*;//Step3
+SoundFile player;//step3
+void setup(){
+  size(400,200);
+  textSize(40);
+  player = new SoundFile(this,"tada.mp3");
+}//Step03
+void draw(){
+  background(51,114,191);
+  int s = second();
+  text(9-s%10,100,100);
+  if(9-s%10==0)player.play();//Step03
+}//0秒時,if()會進去60次,吵死了!!
+```
