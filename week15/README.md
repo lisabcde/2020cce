@@ -72,3 +72,23 @@ void draw(){
   if(9-s%10==0)player.play();//Step03
 }//0秒時,if()會進去60次,吵死了!!
 ```
+## 正課 播bell
+```c
+//Step03出發,做Step05
+import processing.sound.*;
+SoundFile player;
+void setup(){
+  size(400,200);
+  player = new SoundFile(this,"bell.mp3");
+}//Step03
+void draw(){
+  background(51,114,191);
+}
+void mousePressed(){
+  if(player.isPlaying()){
+    player.stop();
+  }else{
+    players.play();
+  }
+}
+```
